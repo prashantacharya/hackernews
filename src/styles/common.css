@@ -1,0 +1,8 @@
+a {
+  color: var(--theme-color);
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--theme-color);
+}

@@ -1,0 +1,35 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+@import url('theme.css');
+@import url('common.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+}
+
+body {
+  font-family: var(--primary-font);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 15px;
+  margin: 0 auto;
+}
