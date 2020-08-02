@@ -15,7 +15,7 @@ function App() {
           <Route path="/story/:id">
             <Story />
           </Route>
-          <Route path="/">
+          <Route path={["/", "/hackernews"]}>
             <Home />
           </Route>
         </Switch>
