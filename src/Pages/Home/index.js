@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+
+import Button from '../../Components/Button';
+import { POSTS_PER_PAGE } from '../../constants';
+import PostList from '../../Components/PostList';
 import { StoriesContext } from '../../Context/StoriesContext';
 
 import './home.css';
-import PostList from '../../Components/PostList';
-import { POSTS_PER_PAGE } from '../../constants';
-import Button from '../../Components/Button';
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 
 class Home extends Component {
   state = { selected: 0 };

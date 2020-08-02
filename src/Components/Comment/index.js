@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import './comment.css';
 import Axios from 'axios';
+
 import { BASE_URL } from '../../constants';
 import { AiOutlineUser } from 'react-icons/ai';
+
+import './comment.css';
 
 class Comment extends Component {
   state = {

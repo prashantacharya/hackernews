@@ -3,8 +3,9 @@ import { GoComment } from 'react-icons/go';
 import { useRouteMatch } from 'react-router-dom';
 import { AiOutlineStar, AiOutlineUser, AiOutlineLink } from 'react-icons/ai';
 
-import { StoriesContext } from '../../Context/StoriesContext';
 import Comment from '../../Components/Comment';
+import { StoriesContext } from '../../Context/StoriesContext';
+
 import './story.css';
 
 function Story() {

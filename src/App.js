@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './Pages/Home';
 import Story from './Pages/Story';
+import { ROUTES } from './constants';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 
@@ -12,10 +13,10 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/story/:id">
+          <Route path={ROUTES.storiesPage}>
             <Story />
           </Route>
-          <Route path={['/', '/hackernews']}>
+          <Route path={ROUTES.homePage}>
             <Home />
           </Route>
         </Switch>
