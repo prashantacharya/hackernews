@@ -1,16 +1,69 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { StoriesContext } from '../../Context/StoriesContext';
 
+import './home.css';
+import PostList from '../../Components/PostList';
+import { POSTS_PER_PAGE } from '../../constants';
+import Button from '../../Components/Button';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+
 class Home extends Component {
+  state = { selected: 0 };
   static contextType = StoriesContext;
+
+  decrementSelected = () => {
+    this.setState({
+      selected: this.state.selected - 1,
+    });
+  };
+
+  incrementSelected = () => {
+    this.setState({
+      selected: this.state.selected + 1,
+    });
+  };
+
   render() {
-    console.log(this.context);
+    const { data, isLoading } = this.context.data;
+    const selectedStartIndex = this.state.selected * POSTS_PER_PAGE;
+    const selectedPageData = data.slice(
+      selectedStartIndex,
+      selectedStartIndex + POSTS_PER_PAGE
+    );
+    const totalPages = data.length / POSTS_PER_PAGE;
+
     return (
       <div className="home">
         <div className="container">
-          <p>Home Page</p>
-          <Link to="story/123">Go to story pages</Link>
+          {isLoading && <p style={{ textAlign: 'center' }}>Loading</p>}
+          {!isLoading && (
+            <div className="controls">
+              <div className="control-text">
+                {this.state.selected + 1} <span>/ {totalPages}</span>
+              </div>
+              <div>
+                <Button
+                  className="control-btn"
+                  onClick={this.decrementSelected}
+                  disabled={this.state.selected === 0}
+                >
+                  <BsChevronCompactLeft />
+                </Button>
+                <Button
+                  className="control-btn"
+                  onClick={this.incrementSelected}
+                  disabled={this.state.selected + 1 === totalPages}
+                >
+                  <BsChevronCompactRight />
+                </Button>
+              </div>
+            </div>
+          )}
+          <ul>
+            {selectedPageData.map((post) => (
+              <PostList key={post.id} post={post} />
+            ))}
+          </ul>
         </div>
       </div>
     );

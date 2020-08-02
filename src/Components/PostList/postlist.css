@@ -1,0 +1,25 @@
+.story-card {
+  margin-bottom: 40px;
+  padding: 15px;
+  border-top-right-radius: 5px;
+  box-shadow: 10px 10px 10px #d2d2d2;
+  border-left: 5px solid var(--theme-color);
+  border-bottom-right-radius: 5px;
+}
+
+.story-card:last-child {
+  margin-bottom: 10px;
+}
+
+.story-details {
+  margin-top: 10px;
+}
+
+.story-details li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.story-details svg {
+  margin-right: 5px;
+}
