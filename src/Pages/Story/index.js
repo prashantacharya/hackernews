@@ -52,7 +52,12 @@ function Post({ post }) {
         </ul>
       </div>
 
-      {post.text && <p className="post-text">{post.text}</p>}
+      {post.text && (
+        <p
+          className="post-text"
+          dangerouslySetInnerHTML={{ __html: post.text }}
+        />
+      )}
       {post.kids && <h3 style={{ marginTop: 25 }}>Comments: </h3>}
       <Comment comments={post.kids} />
     </Fragment>
