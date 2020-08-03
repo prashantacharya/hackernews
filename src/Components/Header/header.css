@@ -1,0 +1,16 @@
+header {
+  background-color: var(--theme-color);
+  color: var(--primary-white);
+}
+
+header h1 {
+  display: inline-block;
+}
+
+header a {
+  color: var(--primary-white);
+}
+
+header a:hover {
+  border-bottom: none;
+}

@@ -1,0 +1,39 @@
+.home {
+  min-height: 90vh;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.control-text {
+  font-size: 22px;
+}
+
+.control-text span {
+  font-size: 32px;
+}
+
+.control-btn {
+  background-color: var(--theme-color);
+  color: var(--primary-white);
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.control-btn:hover {
+  background-color: #075a56;
+}
+
+.control-btn:first-child {
+  margin-right: 5px;
+}
+
+.control-btn:disabled {
+  cursor: not-allowed;
+  background-color: #9d9dc4;
+}
