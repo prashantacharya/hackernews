@@ -15,14 +15,13 @@ class StoriesContextWrapper extends Component {
   };
 
   fetchDataFromId = async () => {
-    const promises = [];
-
     const startIndex = this.state.selectedPage * POSTS_PER_PAGE;
     const endIndex = startIndex + POSTS_PER_PAGE;
 
-    for (let i = startIndex; i < endIndex; i++) {
-      promises.push(Axios.get(`${BASE_URL}/item/${this.state.id[i]}.json`));
-    }
+    const promises = this.state.id
+      .slice(startIndex, endIndex)
+      .map((id) => Axios.get(`${BASE_URL}/item/${id}.json`));
+
     try {
       const response = await Promise.all(promises);
       const data = response.map((res) => res.data);

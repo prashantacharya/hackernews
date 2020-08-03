@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './Pages/Home';
 import Story from './Pages/Story';
-import { ROUTES } from './constants';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+
+import { ROUTES } from './constants';
 
 function App() {
   return (

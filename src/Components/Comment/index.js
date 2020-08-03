@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+
 import Axios from 'axios';
+import { AiOutlineUser } from 'react-icons/ai';
 
 import { BASE_URL } from '../../constants';
-import { AiOutlineUser } from 'react-icons/ai';
 
 import './comment.css';
 
@@ -12,7 +13,7 @@ class Comment extends Component {
     isLoading: true,
   };
 
-  async componentDidMount() {
+  fetchComments = async () => {
     try {
       const promises = this.props.comments.map((comment) =>
         Axios.get(`${BASE_URL}/item/${comment}.json`)
@@ -24,6 +25,10 @@ class Comment extends Component {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  componentDidMount() {
+    this.fetchComments();
   }
 
   render() {

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 
 import Button from '../../Components/Button';
-import { POSTS_PER_PAGE } from '../../constants';
 import PostList from '../../Components/PostList';
+
 import { StoriesContext } from '../../Context/StoriesContext';
+
+import { POSTS_PER_PAGE } from '../../constants';
 
 import './home.css';
 
