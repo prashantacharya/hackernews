@@ -1,0 +1,32 @@
+.comments-wrapper {
+  margin: 15px;
+  padding: 15px;
+  border-left: 1px solid gray;
+}
+
+.comments-wrapper:first-child {
+  margin-left: 0px;
+}
+
+.comment-item {
+  margin: 40px 0px;
+  line-height: 1.5;
+}
+
+.comment-item:first-child {
+  margin-top: 0px;
+}
+
+.comment-item:last-child {
+  margin-bottom: 0px;
+}
+
+.comment-by {
+  margin: 10px 0px;
+  color: var(--theme-color);
+  font-weight: 600;
+}
+
+.comment-item p {
+  margin: 10px 0px;
+}
